@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>AOT_Test</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <InvariantGlobalization>true</InvariantGlobalization>
+
+	  <PublishAot>True</PublishAot>
+	  <PublishTrimmed>True</PublishTrimmed>
+	  <TrimMode>partial</TrimMode>
+	  <TrimmerSingleWarn>false</TrimmerSingleWarn>
+  </PropertyGroup>
+
+</Project>
