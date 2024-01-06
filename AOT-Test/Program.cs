@@ -8,12 +8,12 @@ namespace AOT_Test
         {
             Console.WriteLine("Hello, World!");
 
-            //JsonObject k = new JsonObject();
-            //k["a"] = 1;
+            JsonObject k = new JsonObject();
+            k["a"] = 1;
 
             Console.WriteLine("Result:" + SharedMemory.WriteToSharedMemory("Hi!", "lalala"));
 
-            //Console.WriteLine(k);
+            Console.WriteLine(k);
  
             Console.ReadLine();
         }

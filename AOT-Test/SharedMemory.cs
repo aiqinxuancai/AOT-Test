@@ -35,14 +35,13 @@ namespace AOT_Test
             IntPtr hMapFile = CreateFileMapping(new IntPtr(-1), IntPtr.Zero, PAGE_READWRITE, 0, len, sharedMemoryName);
             if (hMapFile == IntPtr.Zero)
             {
-                //Console.WriteLine("#1");
                 return false;
             }
 
             IntPtr pBuf = MapViewOfFile(hMapFile, FILE_MAP_ALL_ACCESS, 0, 0, len);
             if (pBuf == IntPtr.Zero)
             {
-                //Console.WriteLine($"#2 {len}");
+                Console.WriteLine($"#2 {Marshal.GetLastSystemError()}");
                 CloseHandle(hMapFile);
                 return false;
             }
@@ -50,7 +49,7 @@ namespace AOT_Test
             Marshal.Copy(data.ToCharArray(), 0, pBuf, data.Length);
 
             UnmapViewOfFile(pBuf);
-            //CloseHandle(hMapFile); // 映射句柄在使用后立即关闭就会导致其他地方无法读
+            //CloseHandle(hMapFile);
 
             return true;
         }
