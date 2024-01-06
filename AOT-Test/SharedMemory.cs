@@ -41,7 +41,7 @@ namespace AOT_Test
             IntPtr pBuf = MapViewOfFile(hMapFile, FILE_MAP_ALL_ACCESS, 0, 0, len);
             if (pBuf == IntPtr.Zero)
             {
-                Console.WriteLine($"#2 {Marshal.GetLastSystemError()}");
+                Console.WriteLine($"#2 {Marshal.GetLastSystemError()} {Marshal.GetLastWin32Error()}");
                 CloseHandle(hMapFile);
                 return false;
             }
